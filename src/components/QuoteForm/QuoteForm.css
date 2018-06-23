@@ -1,0 +1,17 @@
+#ofx-quote-form {
+  border: 1px solid #ddd;
+  padding: 24px 16px;
+}
+#ofx-quote-form:before,
+#ofx-quote-form:after {
+  content: "";
+  display: table;
+} 
+#ofx-quote-form:after {
+  clear: both;
+}
+
+.button-wrapper {
+  margin-top: 10px;
+  text-align: center;
+}

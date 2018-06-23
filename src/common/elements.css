@@ -1,0 +1,58 @@
+form label {
+  font-size: 16px;
+}
+input {
+  font-family: 'Titillium Web', sans-serif;
+}
+input[type=text],
+input[type=number] {
+  height: 44px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 300;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  padding: 4px 8px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+button {
+  min-width: 180px;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1;
+  position: relative;
+  padding: 12px 16px;
+  background: #29679d;
+  border: none;
+  border-radius: 24px;
+  color: white;
+  transition: .2s;
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  filter: brightness(80%) contrast(150%);
+}
+
+button.link {
+  width: auto;
+  min-width: initial;
+  -webkit-appearance: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 1em;
+  color: #167ab4;
+  border: none;
+  padding: 0;
+}
+
+.has-error {
+  color: #d00;
+}
+.has-error input[type=text],
+.has-error select {
+  border-color: #d00;
+  color: #d00;
+}

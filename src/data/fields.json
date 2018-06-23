@@ -1,0 +1,104 @@
+{
+  "userForm": [
+    {
+      "type": "text",
+      "name": "first-name",
+      "label": "First Name",
+      "required": true,
+      "validator": "^[a-zA-Z\\s]+$",
+      "grid": "large-6 small-12"
+    },{
+      "type": "text",
+      "name": "last-name",
+      "label": "Last Name",
+      "required": true,
+      "validator": "^[a-zA-Z\\s]+$",
+      "grid": "large-6 small-12"
+    },{
+      "type": "text",
+      "name": "email",
+      "label": "Email",
+      "required": false,
+      "validator": "^[a-zA-Z0-9]{1,}[a-zA-Z0-9+\\-_\\.][a-zA-Z0-9]{1,}@[a-zA-Z]{2,}\\.[a-zA-Z]{2,}[\\.a-zA-Z]{1,}$",
+      "grid": "large-12 small-12"
+    },{
+      "type": "combo",
+      "name": "phone",
+      "label": "Telephone/Mobile",
+      "options": [{
+        "label": "+1",
+        "value": "+1"
+      },{
+        "label": "+61",
+        "value": "+61"
+      },{
+        "label": "+91",
+        "value": "+91"
+      }],
+      "required": false,
+      "validator": "^[0-9\\-\\s()]+$",
+      "grid": "large-12 small-12"
+    }
+  ],
+  "currencyForm" : [
+    {
+      "type": "select",
+      "name": "from-currency",
+      "label": "From Currency",
+      "options": [{
+        "label": "AUD",
+        "value": "AUD"
+      },{
+        "label": "USD",
+        "value": "USD"
+      },{
+        "label": "INR",
+        "value": "INR"
+      },{
+        "label": "EUR",
+        "value": "EUR"
+      },{
+        "label": "GBP",
+        "value": "GBP"
+      },{
+        "label": "JPY",
+        "value": "JPY"
+      }],
+      "required": true,
+      "grid": "large-6 small-12"
+    },{
+      "type": "select",
+      "name": "to-currency",
+      "label": "to Currency",
+      "options": [{
+        "label": "AUD",
+        "value": "AUD"
+      },{
+        "label": "USD",
+        "value": "USD"
+      },{
+        "label": "INR",
+        "value": "INR"
+      },{
+        "label": "EUR",
+        "value": "EUR"
+      },{
+        "label": "GBP",
+        "value": "GBP"
+      },{
+        "label": "JPY",
+        "value": "JPY"
+      }],
+      "required": true,
+      "grid": "large-6 small-12"
+    },{
+      "type": "text",
+      "name": "amount",
+      "label": "amount",
+      "required": false,
+      "validator": "^[a-zA-Z0-9]{1,}[a-zA-Z0-9+\\-_\\.][a-zA-Z0-9]{1,}@[a-zA-Z]{2,}\\.[a-zA-Z]{2,}[\\.a-zA-Z]{1,}$",
+      "grid": "large-6 small-12"
+    }
+  ]
+}
+  
