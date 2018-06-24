@@ -72,10 +72,17 @@ class QuoteForm extends Component {
     if (!this.isFormValid()) return;
 
     const formValues = new FormData(document.forms['quote-form']);
-    this.props.onSubmit(formValues.get('from-currency'), formValues.get('to-currency'), formValues.get('amount'));
+    this.props.onSubmit(
+      formValues.get('from-currency'),
+      formValues.get('to-currency'),
+      parseFloat(formValues.get('amount').replace(/,/g, ''))
+    );
   }
 
   render() {
+    const onAmountBlur = field => {
+     field.value = Intl.NumberFormat(['en-US','en-AU'], {minimumFractionDigits: 2}).format(field.value.replace(/,/g, ''));
+    }
     // render the form field based on the data provided in ../../data/fields.json
     return (
       <div id='ofx-quote-form'>
@@ -88,7 +95,7 @@ class QuoteForm extends Component {
           </div>
           <div className='currency-section clearfix'>
             {formData && formData.currencyForm && formData.currencyForm.map((fieldData, ind) => 
-              <Field key={`cur-field-${ind}`} {...fieldData} />
+              <Field key={`cur-field-${ind}`} {...fieldData} onBlur={fieldData.name === 'amount' ? onAmountBlur : null} />
             )}
             <div className='button-wrapper large-12 small-12'>
               <button className='icon-right' id='btn-submit' onClick={this.submitForm}>GET QUOTE</button>

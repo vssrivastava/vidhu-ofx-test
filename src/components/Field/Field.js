@@ -25,7 +25,7 @@ class Field extends Component {
     const {validator, required} = this.props;
     
     // don't do anything if no validator is provided and the field is optional
-    if (!validator && !required) return;
+    if (!validator && !required) return true;
 
     const fieldValue = this.fieldRef.current.value;
     
@@ -34,7 +34,7 @@ class Field extends Component {
       this.setState({
         errorMsg: 'This field is required.'
       });
-      return;
+      return false;
     }
     // field has invalid input
     if (validator && fieldValue) {
@@ -42,11 +42,12 @@ class Field extends Component {
         this.setState({
           errorMsg: 'Please enter a valid value'
         });
-        return;
+        return false;
       }
     }
     // no error
     this.setState(this.initialState);
+    return true;
   }
 
   /**
@@ -106,7 +107,11 @@ class Field extends Component {
         aria-invalid={hasError}
         placeholder={label}
         ref={this.fieldRef}
-        onBlur={() => { this.validate(); }}
+        onBlur={() => {
+          if (this.validate() && this.props.onBlur) {
+            this.props.onBlur(this.fieldRef.current);
+          }
+        }}
       />
     );
   }
