@@ -55,7 +55,7 @@ class QuoteForm extends Component {
         hasError = true;
         this.setState({
           formValid: false,
-          errorMessage: 'From and To currencies can not be the same.'
+          errorMessage: 'From and To currencies can not be same.'
         });
       }
     }
