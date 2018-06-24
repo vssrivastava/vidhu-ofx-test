@@ -19,6 +19,5 @@ You will also see any lint errors in the console.
 ![ScreenShot1](/screenshot-orig.png?raw=true)
 
 ## Implemented Solution
-(showing dummy data since the API didn't work)
 ![ScreenShot2](/screenshot-impl1.png?raw=true)
 ![ScreenShot3](/screenshot-impl2.png?raw=true)
