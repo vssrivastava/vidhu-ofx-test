@@ -1,6 +1,5 @@
 #ofx-quote-form {
   border: 1px solid #ddd;
-  padding: 24px 16px;
 }
 #ofx-quote-form:before,
 #ofx-quote-form:after {
@@ -10,7 +9,21 @@
 #ofx-quote-form:after {
   clear: both;
 }
-
+#ofx-quote-form .user-section {
+  padding: 24px 16px 12px;
+}
+#ofx-quote-form .currency-section {
+  border-top: 1px solid #ddd;
+  background-color: #fafafa;
+  padding: 12px 16px 24px;
+}
+.form-error {
+  background-color: #a00;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  padding: 8px;
+}
 .button-wrapper {
   margin-top: 10px;
   text-align: center;

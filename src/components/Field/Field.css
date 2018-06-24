@@ -1,4 +1,78 @@
+form label,
+.error-message {
+  font-size: 16px;
+}
 .form-field {
   padding: 0 10px;
   box-sizing: border-box;
+}
+.asterisk {
+  font-size: 24px;
+  color: #d00;
+  margin-left: 6px;
+}
+.select-wrapper {
+  position: relative;
+  background-color: #fff;
+}
+.select-wrapper:after {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 600;
+  content: "\f078";
+  position: absolute;
+  z-index: 1;
+  top: 14px;
+  right: 14px;
+  color: #43aee7;
+  font-size: 18px;
+}
+.combo-input .select-wrapper {
+  width: 10%;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #fafafa;
+}
+.combo-input select {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.combo-input input[type=text] {
+  width: 90%;
+  display: inline-block;
+  vertical-align: top;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.has-error {
+  color: #d00;
+}
+.has-error input[type=text],
+.has-error select {
+  border-color: #d00;
+  color: #d00;
+}
+@media only screen and (max-width: 767px) {
+  .combo-input .select-wrapper {
+    width: 15%;
+  }
+  .combo-input input[type=text] {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .combo-input .select-wrapper {
+    width: 20%;
+  }
+  .combo-input input[type=text] {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .combo-input .select-wrapper {
+    width: 30%;
+  }
+  .combo-input input[type=text] {
+    width: 70%;
+  }
 }

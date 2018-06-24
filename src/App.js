@@ -19,29 +19,46 @@ class App extends Component {
     this.startOver = this.startOver.bind(this);
   }
 
+  /**
+   * reset the state to start over the quick quote flow
+   */
   startOver() {
     this.setState(this.initialState);
   }
-  getQuote(id) {
-    fetchQuote(id).then(res => {
-      this.setState({
-        quote: {
-          fromCurrency: '',
-          fromAmount: '',
-          toCurrency: '',
-          toAmount: '',
-          rate: ''
-        }
-      });
+
+  /**
+   * Fetch the conversion quote for the currencies and amount provided
+   * @param {String} from currency code
+   * @param {String} to currency code
+   * @param {Number} amount to be converted
+   */
+  getQuote(from, to, amount) {
+    // fetchQuote(from, to, amount).then(res => {
+    //   this.setState({
+    //     quote: {
+    //       fromCurrency: from,
+    //       fromAmount: amount,
+    //       toCurrency: to,
+    //       toAmount: res.CustomerAmount,
+    //       rate: res.CustomerRate
+    //     }
+    //   });
+    // });
+    this.setState({
+      quote: {
+        fromCurrency: from,
+        fromAmount: amount,
+        toCurrency: to,
+        toAmount: '19045',
+        rate: '0.7618'
+      }
     });
   }
   
   render() {
     const comp = this.state.quote
-      ? (<Quote onClick={this.startOver} />)
-      : (<div className="quote-form">
-          <QuoteForm />
-        </div>);
+      ? (<Quote quote={this.state.quote} onClick={this.startOver} />)
+      : (<QuoteForm onSubmit={this.getQuote} />);
 
     return (
       <div className="app">

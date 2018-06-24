@@ -46,22 +46,22 @@
       "name": "from-currency",
       "label": "From Currency",
       "options": [{
-        "label": "AUD",
+        "label": "Australian Dollar [AUD]",
         "value": "AUD"
       },{
-        "label": "USD",
+        "label": "United States Dollar [USD]",
         "value": "USD"
       },{
-        "label": "INR",
+        "label": "Indian Rupee [INR]",
         "value": "INR"
       },{
-        "label": "EUR",
+        "label": "Euro [EUR]",
         "value": "EUR"
       },{
-        "label": "GBP",
+        "label": "British Pound [GBP]",
         "value": "GBP"
       },{
-        "label": "JPY",
+        "label": "Japanese Yen [JPY]",
         "value": "JPY"
       }],
       "required": true,
@@ -69,24 +69,24 @@
     },{
       "type": "select",
       "name": "to-currency",
-      "label": "to Currency",
+      "label": "To Currency",
       "options": [{
-        "label": "AUD",
+        "label": "Australian Dollar [AUD]",
         "value": "AUD"
       },{
-        "label": "USD",
+        "label": "United States Dollar [USD]",
         "value": "USD"
       },{
-        "label": "INR",
+        "label": "Indian Rupee [INR]",
         "value": "INR"
       },{
-        "label": "EUR",
+        "label": "Euro [EUR]",
         "value": "EUR"
       },{
-        "label": "GBP",
+        "label": "British Pound [GBP]",
         "value": "GBP"
       },{
-        "label": "JPY",
+        "label": "Japanese Yen [JPY]",
         "value": "JPY"
       }],
       "required": true,
@@ -94,9 +94,9 @@
     },{
       "type": "text",
       "name": "amount",
-      "label": "amount",
-      "required": false,
-      "validator": "^[a-zA-Z0-9]{1,}[a-zA-Z0-9+\\-_\\.][a-zA-Z0-9]{1,}@[a-zA-Z]{2,}\\.[a-zA-Z]{2,}[\\.a-zA-Z]{1,}$",
+      "label": "Amount",
+      "required": true,
+      "validator": "^[0-9\\.\\,]+$",
       "grid": "large-6 small-12"
     }
   ]

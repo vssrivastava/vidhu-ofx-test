@@ -1,3 +1,39 @@
+.quote-info {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  padding: 16px;
+  font-size: 28px;
+}
 .quote-rate-wrapper {
+  text-align: center;
+}
+.quote-rate-wrapper .quote-rate {
+  color: #44a87a;
+  font-size: 54px;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+.quote-details {
+  width: 240px;
+  margin: 20px auto;
+}
+.quote-details label {
+  display: block;
+  line-height: 1;
+  margin-top: 12px;
+}
+.quote-details .currency {
+  font-size: 32px;
+  line-height: 1;
+}
+.quote-details .amount {
+  font-size: 32px;
+  color: #4981ac;
+  line-height: 1;
+  margin-left: 6px;
+}
+
+.done-btn-wrapper {
+  margin: 44px 0 12px;
   text-align: center;
 }
