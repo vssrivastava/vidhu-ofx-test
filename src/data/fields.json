@@ -25,6 +25,7 @@
       "type": "combo",
       "name": "phone",
       "label": "Telephone/Mobile",
+      "selectLabel": "country code",
       "options": [{
         "label": "+1",
         "value": "+1"

@@ -33,25 +33,16 @@ class App extends Component {
    * @param {Number} amount to be converted
    */
   getQuote(from, to, amount) {
-    // fetchQuote(from, to, amount).then(res => {
-    //   this.setState({
-    //     quote: {
-    //       fromCurrency: from,
-    //       fromAmount: amount,
-    //       toCurrency: to,
-    //       toAmount: res.CustomerAmount,
-    //       rate: res.CustomerRate
-    //     }
-    //   });
-    // });
-    this.setState({
-      quote: {
-        fromCurrency: from,
-        fromAmount: amount,
-        toCurrency: to,
-        toAmount: '19045',
-        rate: '0.7618'
-      }
+    fetchQuote(from, to, amount).then(res => {
+      this.setState({
+        quote: {
+          fromCurrency: from,
+          fromAmount: amount,
+          toCurrency: to,
+          toAmount: res.CustomerAmount,
+          rate: res.CustomerRate
+        }
+      });
     });
   }
   

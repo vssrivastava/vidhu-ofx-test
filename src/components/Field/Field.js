@@ -53,7 +53,7 @@ class Field extends Component {
    * render the correct field based on 'type' prop
    */
   getInput() {
-    const {type, required, name, label, options} = this.props;
+    const {type, required, name, label, selectLabel, options} = this.props;
     const hasError = !!this.state.errorMsg;
     const classes = [
       required ? 'required' : '',
@@ -74,7 +74,7 @@ class Field extends Component {
       return (
         <div className='combo-input'>
           <div className='select-wrapper'>
-            <select name={`${name}-select`} id={`${name}-select`} >
+            <select name={`${name}-select`} id={`${name}-select`} aria-label={selectLabel} >
             {options && options.map((option, ind) => 
               <option key={`option-${ind}`} value={option.value}>{option.label}</option>
             )}
@@ -112,7 +112,7 @@ class Field extends Component {
   }
 
   render() {
-    const {label, required, grid} = this.props;
+    const {label, name, required, grid} = this.props;
     const errorMsg = this.state.errorMsg;
     const classes = [
       'form-field',
@@ -122,7 +122,7 @@ class Field extends Component {
     ].join(' ');
     return (
       <div className={classes}>
-        <label>{label}{required && <span className='asterisk'>*</span>}</label>
+        <label htmlFor={name}>{label}{required && <span aria-hidden='true' className='asterisk'>*</span>}</label>
         {this.getInput()}
         {errorMsg &&
           <div className='error-message'>{errorMsg}</div>
